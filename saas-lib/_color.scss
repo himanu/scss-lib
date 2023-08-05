@@ -1,0 +1,40 @@
+@each $key, $val in $colors {
+    .text-#{$key} {
+        color: $val;
+    }
+    .bg-#{$key} {
+        background-color: $val;
+    }
+    // add class for hover effect
+    .text-hover-#{$key} {
+        &:hover {
+            color: $val;
+        }
+    }
+
+    // for each color except white and black generate different light and dark varsion classes
+    @if($key != "white" && $key!="black") {
+        @for $i from 1 through 9 {
+            // light version
+            .text-#{$key}-light-#{$i} {
+                color: mix(white, $val, $i * 10);
+            }
+            .text-hover-#{$key}-light-#{$i} {
+                &:hover {
+                    color: $val;
+                }
+            }
+            .bg-#{$key}-light-#{$i} {
+                background-color: mix(white, $val, $i * 10);
+            }
+
+            // dark version
+            .text-#{$key}-dark-#{$i} {
+                color: mix(black, $val, $i * 10);
+            }
+            .bg-#{$key}-dark-#{$i} {
+                background-color: mix(black, $val, $i * 10);
+            }
+        }
+    }
+}
