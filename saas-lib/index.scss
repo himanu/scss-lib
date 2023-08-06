@@ -3,6 +3,7 @@
 @import "./variable";
 // base and layout
 @import "./base";
+@import "./breakpoints";
 // colors
 @import "./color";
 // components (button, card, navbar)
@@ -12,3 +13,5 @@
 // utilities (padding, margin, border)
 @import "./utilities";
 
+// grid
+@import "./grid";
