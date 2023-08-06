@@ -3098,7 +3098,7 @@ img {
   flex-wrap: wrap;
 }
 
-@media (min-width: 0) {
+@media (min-width: 0px) {
   .col-1-xs {
     box-sizing: border-box;
     flex-grow: 0;
